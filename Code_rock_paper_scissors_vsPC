@@ -1,0 +1,51 @@
+### Good luck, fingers ummm... crossed ###
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+# 0 rock 1 paper 2 Scissors
+import random
+players_hand = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
+PC_hand = random.randint(0,2)
+game = ["rock", "paper", "scissors"]
+PC_plays = game[PC_hand]
+if PC_plays == players_hand:
+  print("It's a draw!")
+elif players_hand == 0:
+  if PC_hand == 1:
+    print(f"Computer went for: {PC_plays.title()}\n" + paper + "\nYou loose.")
+  else:
+    print(f"Computer went for: {PC_plays.title()}\n" + scissors + "\nYou won!")
+elif players_hand == 1:
+  if PC_hand == 0:
+    print(f"Computer went for: {PC_plays.title()}\n" + rock + "\nYou won!")
+  else:
+    print(f"Computer went for: {PC_plays.title()}\n" + scissors + "\nYou loose.")
+elif players_hand == 2:
+  if PC_hand == 0:
+    print(f"Computer went for: {PC_plays.title()}\n" + rock + "\nYou loose.")
+  else:
+    print(f"Computer went for: {PC_plays.title()}\n" + paper + "\nYou won!")
+## ENDE

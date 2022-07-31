@@ -1,0 +1,53 @@
+## Rock Paper Scissors more ASCII art ##
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+##-----------------------------------------##
+game_images = [rock, paper, scissors]
+
+player_option = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
+if player_option >= 3 or player_option < 0:
+  print("You've provided incorrect number. Adios!")
+else:
+  print(game_images[player_option])
+## if incorrect number provided, ^ won't let you play ##
+
+  PC_option = random.randint(0, 2)
+  print("Your AI opponent went for:")
+  print(game_images[PC_option])
+
+  if player_option == 0 and PC_option == 2:
+    print("You won!")
+  elif PC_option == 0 and player_option == 2:
+    print("You lost")
+  elif PC_option > player_option:
+    print("You lost")
+  elif player_option > PC_option:
+    print("You won!")
+  elif PC_option == player_option:
+    print("It's a draw")
+    ## ENDE ##
